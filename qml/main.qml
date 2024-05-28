@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.15
 ApplicationWindow
 {
     visible: true
-    title: "UnixCMD 111"
+    title: "UnixCMD"
     width: 400
     height: 400
 

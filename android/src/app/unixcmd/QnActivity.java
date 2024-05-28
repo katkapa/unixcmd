@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.net.Uri;
 import android.content.Intent;
 import android.content.res.Configuration;
-import org.qtproject.qt5.android.bindings.QtActivity;
+import org.qtproject.qt6.android.bindings.QtActivity;
 import android.view.MotionEvent;
 
 public class QnActivity extends QtActivity

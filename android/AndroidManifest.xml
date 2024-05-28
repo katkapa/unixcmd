@@ -9,7 +9,7 @@
     <application
         android:hardwareAccelerated="true"
         android:extractNativeLibs="true"
-        android:name="org.qtproject.qt5.android.bindings.QtApplication"
+        android:name="org.qtproject.qt6.android.bindings.QtApplication"
         android:label="@string/app_name">
 
         <activity

@@ -3,6 +3,8 @@
 #include <QtPlugin>
 #include <QtGlobal>
 
+#include "src/UnixCmdWindow.h"
+
 #ifdef BUILD_STATIC
     Q_IMPORT_PLUGIN(QtQmlPlugin)
     Q_IMPORT_PLUGIN(QtQmlModelsPlugin)
@@ -18,12 +20,13 @@
     #endif
 #endif
 
-//extern "C" int qtmn(int argc, char **argv) {
+
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
-    QQmlApplicationEngine engine;
 
-    engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+    UnixCmdWindow window;
+
+    window.show();
 
     return app.exec();
 }

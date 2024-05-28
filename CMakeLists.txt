@@ -28,7 +28,7 @@ endif()
 conan_basic_setup(${basic_setup_args})
 
 find_package(
-    Qt5
+    Qt6
         COMPONENTS
             Core
             Widgets
@@ -51,43 +51,37 @@ if(ANDROID)
 else()
     add_executable(unixcmd)
 
-    add_definitions(-DBUILD_STATIC)
+    #add_definitions(-DBUILD_STATIC)
 endif()
 
-set(SOURCES qml/main.qml)
+set(
+    SOURCES
+        qml/main.qml
+        src/DirectoryView.cpp
+        src/DirectoryView.h
+        src/DirectoryViewModel.cpp
+        src/DirectoryViewModel.h
+        src/UnixCmdWindow.cpp
+        src/UnixCmdWindow.h
+)
 
-qt5_add_resources(SOURCES qml.qrc)
+qt6_add_resources(SOURCES qml.qrc)
 
 target_sources(unixcmd PUBLIC main.cpp ${SOURCES})
 
 target_link_libraries(
     unixcmd
-        Qt5::Widgets
-        Qt5::Qml
-        Qt5::QmlModels
-        Qt5::QmlWorkerScript
-        Qt5::QuickTemplates2
-        Qt5::QuickControls2
-        Qt5::Quick
-        Qt5::Gui
-        Qt5::Core
-        Qt5::Network
+        Qt6::Widgets
+        Qt6::Qml
+        Qt6::QmlModels
+        Qt6::QmlWorkerScript
+        Qt6::QuickTemplates2
+        Qt6::QuickControls2
+        Qt6::Quick
+        Qt6::Gui
+        Qt6::Core
+        Qt6::Network
 )
-
-if(NOT ANDROID)
-    target_link_libraries(
-        unixcmd
-            qtquick2plugin
-            qmlplugin
-            qtquickcontrols2plugin
-            modelsplugin
-            workerscriptplugin
-            labsmodelsplugin
-            qquicklayoutsplugin
-            windowplugin
-            qtquicktemplates2plugin
-    )
-endif()
 
 target_link_directories(
     unixcmd
