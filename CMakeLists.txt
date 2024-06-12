@@ -49,7 +49,7 @@ if(ANDROID)
             LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/android-build/libs/${ANDROID_ABI}"
     )
 else()
-    add_executable(unixcmd)
+    add_executable(unixcmd src/DirectoryWorker.cpp src/DirectoryWorker.h)
 
     #add_definitions(-DBUILD_STATIC)
 endif()

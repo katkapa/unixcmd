@@ -9,4 +9,6 @@ class UnixCmdWindow : public QMainWindow {
 public:
     UnixCmdWindow();
     virtual ~UnixCmdWindow() = default;
+
+
 };

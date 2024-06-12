@@ -2,7 +2,8 @@
 
 
 #include <QTableView>
-
+#include <QTimer>
+#include "DirectoryViewModel.h"
 
 class DirectoryView : public QTableView {
     Q_OBJECT
@@ -10,4 +11,7 @@ class DirectoryView : public QTableView {
 public:
     DirectoryView();
     virtual ~DirectoryView() = default;
+private:
+    DirectoryViewModel* m_directoryViewModel;
+    QTimer m_timer = QTimer(this);
 };
